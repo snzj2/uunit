@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.header{
+    display: flex;
+    height: 80px;
+    background-color:aqua;
+    justify-content:space-between;
+    padding-inline: 40px;
+    align-items: center;
+}
+
+.header-logo{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.header-level{
+    display: flex;
+    justify-content:space-between;
+    width: 20%;
+}
+.level{
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: #f3f4f6;
+    color: #1f2937; 
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.level:hover {
+    background-color: #3b82f6; /* синий при наведении */
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.level.active {
+    background-color: #2563eb; /* более насыщенный синий */
+    color: white;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+
+.header-photo{
+    height: 70%;
+
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+  
+.school-map {
+    width: 100%;
+    display: block;
+}
+  
+.marker {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: red;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+  
+.marker:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+  
