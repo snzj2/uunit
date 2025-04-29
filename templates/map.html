@@ -1,7 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="map-container">
-        <img src="{{ url_for('static', filename='other/map.png') }}" alt="Карта школы" class="school-map" />
-        <div class="marker" style="top: 61%; left: 45%;" title="самолет"></div>
+
+<div class="map-container">
+    {%if active_level == 1%}
+    <img src="{{ url_for('static', filename='other/map.png') }}" alt="Карта школы" class="school-map"/>
+    <div class="marker" style="top: 61%; left: 45%;" title="самолет"></div>
+    {%endif%}
+
+    {%if active_level == 2%}
+    <img src="{{ url_for('static', filename='other/map.png') }}" alt="Карта школы" class="school-map"/>
+    {%endif%}
+
+</div>
+
+<div class="about">
+    <div class="about-content">
+        <h2>О Уфимском Университете</h2>
+        <p>
+            Уфимский университет — это центр современных знаний и исследований, сочетающий традиции классического
+            образования с инновациями. Мы готовим специалистов, способных мыслить критически, работать в команде и
+            менять мир к лучшему.
+        </p>
+        <p>
+            Кампус университета объединяет учебные корпуса, лаборатории, культурные пространства и студенческую жизнь,
+            создавая благоприятную среду для развития личности и профессионального роста.
+        </p>
     </div>
+</div>
 {% endblock %}

@@ -1,11 +1,12 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 import json
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('map.html')
+    level = request.args.get('level', default=1, type=int)
+    return render_template('map.html', active_level=level)
 
 
 if __name__ == '__main__':

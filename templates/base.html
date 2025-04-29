@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>Карта школы</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}" />
+    <meta charset="UTF-8"/>
+    <title>Карта школы</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}"/>
 </head>
 <body>
-    <header class="header">
-        <a href="" class="header-logo">
-            <img src="{{ url_for('static', filename='other/uunit.svg') }}" alt="" class="header-photo">
-        </a>
+<header class="header">
+    <a href="" class="header-logo">
+        <img src="{{ url_for('static', filename='other/uunit.svg') }}" alt="" class="header-photo">
+    </a>
+    <div class="header-level">
         <div class="header-level">
-            <button class="level active">
-                1
+            {% for i in range(1, 4) %}
+            <button class="level {% if active_level == i %}active{% endif %}"
+                    onclick="location.href='{{ url_for('index', level=i) }}'">
+                {{ i }}
             </button>
-            <button class="level">
-                2
-            </button>
-            <button class="level">
-                3
-            </button>
+            {% endfor %}
         </div>
-    </header>
-    <div class="container">
-        {% block content %}{% endblock %}
     </div>
+</header>
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
 </body>
 </html>
