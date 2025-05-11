@@ -4,7 +4,7 @@
 <div class="map-container">
     {%if active_level == 1%}
     <img src="{{ url_for('static', filename='other/map.png') }}" alt="Карта школы" class="school-map"/>
-    <div class="marker" style="top: 61%; left: 45%;" title="самолет" onclick="location.href='{{ url_for('info', level=i, info='пидормет') }}'"></div>
+    <div class="marker" style="top: 61%; left: 45%;" title="самолет" onclick="location.href='{{ url_for('info', level=i, info='jet') }}'"></div>
     {%endif%}
 
     {%if active_level == 2%}
