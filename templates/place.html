@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>{{info_place}}</h1>
+<div class="container">
+    <div class="map-container">
+        <a href="" class="header-logo">
+            <img src="{{ url_for('static', filename='other/' + image) }}" alt="" class="school-map">
+        </a>
+    </div>
+</div>
+<div class="about">
+    <div class="about-content">
+        <h1>{{ about }}</h1>
+        <p>{{ info_place }}</p>
+    </div>
+</div>
 {% endblock %}

@@ -17,16 +17,12 @@ def info():
     db_sess = db_session.create_session()
     level = request.args.get('level', default=1, type=int)
     info = request.args.get('info', default=1, type=str)
-
     place = db_sess.query(Place).all()
     for i in place:
         if i.title.strip() == info.strip():
             k = i
             break
-
-
-
-    return render_template('place.html', active_level=level, info_place=k.description, image=k.image)
+    return render_template('place.html', active_level=level, about=k.about, info_place=k.description, image=k.image)
 
 
 if __name__ == '__main__':
